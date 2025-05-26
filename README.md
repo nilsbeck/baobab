@@ -11,4 +11,10 @@ Run the example with:
 go run main.go -runner.input.path input.json -solve.duration 1s
 ```
 
+Or build them for your platform (Mac (Apple Silicon), Linux, Windwows):
 
+```
+GOOS=darwin GOARCH=arm64 go build -o baobab-darwin-arm64 .
+GOOS=linux GOARCH=amd64 go build -o baobab-linux-amd64 .
+GOOS=windows GOARCH=amd64 go build -o baobab-windows-amd64.exe .
+```
