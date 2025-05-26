@@ -1,0 +1,81 @@
+{
+    "stops": [
+      {
+        "id": "s1-client1",
+        "location": {
+          "lon": -78.90919,
+          "lat": 35.72389
+        }
+      },
+      {
+        "id": "s2-client1",
+        "location": {
+          "lon": -78.813862,
+          "lat": 35.75712
+        }
+      },
+      {
+        "id": "s3-client1",
+        "location": {
+          "lon": -78.92996,
+          "lat": 35.932795
+        }
+      },
+      {
+        "id": "s4-client2",
+        "location": {
+          "lon": -78.505745,
+          "lat": 35.77772
+        }
+      },
+      {
+        "id": "s5-client2",
+        "location": {
+          "lon": -78.75084,
+          "lat": 35.732995
+        }
+      },
+      {
+        "id": "s6-client2",
+        "location": {
+          "lon": -78.788025,
+          "lat": 35.813025
+        }
+      },
+      {
+        "id": "s7-client3",
+        "location": {
+          "lon": -78.749391,
+          "lat": 35.74261
+        }
+      },
+      {
+        "id": "s8-client3",
+        "location": {
+          "lon": -78.94658,
+          "lat": 36.039135
+        }
+      },
+      {
+        "id": "s9-client3",
+        "location": {
+          "lon": -78.64972,
+          "lat": 35.64796
+        }
+      }
+    ],
+    "vehicles": [
+      {
+        "id": "vehicle-0",
+        "speed": 10,
+        "start_time": "2023-01-01T06:00:00-06:00",
+        "end_time": "2023-01-01T10:00:00-06:00"
+      },
+      {
+        "id": "vehicle-1",
+        "speed": 10,
+        "start_time": "2023-01-01T10:00:00-06:00",
+        "end_time": "2023-01-01T16:00:00-06:00"
+      }
+    ]
+  }
