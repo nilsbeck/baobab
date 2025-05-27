@@ -1,66 +1,93 @@
 {
     "stops": [
       {
-        "id": "s1-client1",
+        "id": "s1",
         "location": {
           "lon": -78.90919,
           "lat": 35.72389
+        },
+        "custom_data": {
+          "client_id": "client1"
         }
       },
       {
-        "id": "s2-client1",
+        "id": "s2",
         "location": {
           "lon": -78.813862,
           "lat": 35.75712
+        },
+        "custom_data": {
+          "client_id": "client1"
         }
       },
       {
-        "id": "s3-client1",
+        "id": "s3",
         "location": {
           "lon": -78.92996,
           "lat": 35.932795
+        },
+        "custom_data": {
+          "client_id": "client1"
         }
       },
       {
-        "id": "s4-client2",
+        "id": "s4",
         "location": {
           "lon": -78.505745,
           "lat": 35.77772
+        },
+        "custom_data": {
+          "client_id": "client2"
         }
       },
       {
-        "id": "s5-client2",
+        "id": "s5",
         "location": {
           "lon": -78.75084,
           "lat": 35.732995
+        },
+        "custom_data": {
+          "client_id": "client2"
         }
       },
       {
-        "id": "s6-client2",
+        "id": "s6",
         "location": {
           "lon": -78.788025,
           "lat": 35.813025
+        },
+        "custom_data": {
+          "client_id": "client2"
         }
       },
       {
-        "id": "s7-client3",
+        "id": "s7",
         "location": {
           "lon": -78.749391,
           "lat": 35.74261
+        },
+        "custom_data": {
+          "client_id": "client3"
         }
       },
       {
-        "id": "s8-client3",
+        "id": "s8",
         "location": {
           "lon": -78.94658,
           "lat": 36.039135
+        },
+        "custom_data": {
+          "client_id": "client3"
         }
       },
       {
-        "id": "s9-client3",
+        "id": "s9",
         "location": {
           "lon": -78.64972,
           "lat": 35.64796
+        },
+        "custom_data": {
+          "client_id": "client3"
         }
       }
     ],

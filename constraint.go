@@ -2,12 +2,11 @@ package main
 
 import (
 	"github.com/nextmv-io/nextroute"
+	"github.com/nextmv-io/nextroute/schema"
 )
 
 // customConstraint is a struct that allows to implement a custom constraint.
-type customConstraint struct {
-	stopsToClients map[string]string
-}
+type customConstraint struct{}
 
 type solutionData struct {
 	clientsVisited map[string]bool
@@ -61,23 +60,24 @@ func (c *customConstraint) UpdateConstraintStopData(solutionStop nextroute.Solut
 		return currentData, nil
 	}
 
-	currentData.clientsVisited[c.stopsToClients[solutionStop.ModelStop().ID()]] = true
+	stop := solutionStop.ModelStop().Data().(schema.Stop)
+	customData := stop.CustomData.(map[string]any)
+	clientId := customData["client_id"].(string)
+	currentData.clientsVisited[clientId] = true
 	return currentData, nil
 }
 
-// EstimateIsViolated returns true if the constraint is violated. If the
-// constraint is violated, the solver needs a hint to determine if further
-// moves should be generated for the vehicle.
+// EstimateIsViolated returns true if the constraint is violated
 func (c *customConstraint) EstimateIsViolated(move nextroute.Move) (isViolated bool, stopPositionsHint nextroute.StopPositionsHint) {
 	constraintData := move.Solution().ConstraintData(c).(*solutionData)
 	for _, stopPosition := range move.StopPositions() {
-		stopId := stopPosition.Stop().ModelStop().ID()
-		stopClientId := c.stopsToClients[stopId]
-		if constraintData.clientsVisited[stopClientId] {
+		stop := stopPosition.Stop().ModelStop().Data().(schema.Stop)
+		customData := stop.CustomData.(map[string]any)
+		clientId := customData["client_id"].(string)
+		if constraintData.clientsVisited[clientId] {
 			return true, nextroute.NoPositionsHint()
 		}
 	}
-	// If the constraint is not violated, the solver does not need a hint.
 	return false, nextroute.NoPositionsHint()
 }
 

@@ -44,17 +44,13 @@ func solver(
 	input schema.Input,
 	options options,
 ) (runSchema.Output, error) {
-	// Create the stop to client mapping
-	stopToClient := createMap(input)
 
 	model, err := factory.NewModel(input, options.Model)
 	if err != nil {
 		return runSchema.Output{}, err
 	}
 
-	constraint := &customConstraint{
-		stopsToClients: stopToClient,
-	}
+	constraint := &customConstraint{}
 
 	err = model.AddConstraint(constraint)
 	if err != nil {
